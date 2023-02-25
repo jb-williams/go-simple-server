@@ -37,6 +37,7 @@ func getHello(resp http.ResponseWriter, requ *http.Request) {
 }
 
 func formHandler(resp http.ResponseWriter, requ *http.Request) {
+	ctx := requ.Context()
 	if err := requ.ParseForm(); err != nil {
 		fPf(resp, "formHandler: ParseForm(): failed: %w\n", err)
 	}
